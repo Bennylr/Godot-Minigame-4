@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b3p6n0jqctbar"]
+[gd_scene load_steps=6 format=3 uid="uid://b3p6n0jqctbar"]
 
 [ext_resource type="Script" uid="uid://cp56appueqqk1" path="res://scripts/npc.gd" id="1_nh2m4"]
 [ext_resource type="PackedScene" uid="uid://w3p6fdp1q6jk" path="res://scenes/ball.tscn" id="2_abqhh"]
@@ -10,20 +10,20 @@ albedo_color = Color(0.8914083, 0.3474434, 0.29302835, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sugp2"]
 
-[node name="NPC" type="RigidBody3D" unique_id=2015873525]
+[node name="NPC" type="RigidBody3D"]
 collision_layer = 8
 collision_mask = 15
 script = ExtResource("1_nh2m4")
 throwFrequency = 2.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=337833416]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_0wfyh")
 surface_material_override/0 = SubResource("StandardMaterial3D_0wfyh")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=741778558]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_sugp2")
 
-[node name="Ball" parent="." unique_id=52778627 instance=ExtResource("2_abqhh")]
+[node name="Ball" parent="." instance=ExtResource("2_abqhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.933092, 0, 1.2410469)
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

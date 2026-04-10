@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://bljxf08q262h5"]
+
+[ext_resource type="PackedScene" uid="uid://dyj54usnh5n82" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://dn7ae06yhyubs" path="res://scenes/level.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://b3p6n0jqctbar" path="res://scenes/npc.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://w3p6fdp1q6jk" path="res://scenes/ball.tscn" id="4_jyhfs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jyhfs"]
+font_size = 30
+
+[node name="Main" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_o5qli")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2401273, 6.084159)
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.83821404, 0.5453415, 0, -0.5453415, 0.83821404, 2.5563685e-07, 2.7700665, 2.0122786)
+
+[node name="Level" parent="." instance=ExtResource("2_0wfyh")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.3097971, 0.9508027, 0, -0.9508027, 0.3097971, 0, 2.806101, 0)
+
+[node name="NPC" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9940548, 1.5117404, -4.794055)
+
+[node name="UI" type="BoxContainer" parent="."]
+offset_right = 323.0
+offset_bottom = 84.0
+
+[node name="Header" type="Label" parent="UI"]
+layout_mode = 2
+text = "points: "
+label_settings = SubResource("LabelSettings_jyhfs")
+
+[node name="PointsLabel" type="Label" parent="UI"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_jyhfs")
+
+[node name="Ball" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.032008, 0.75, 5.703159)
+
+[node name="Ball2" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8009377, 0.75, 5.9645324)
+
+[node name="Ball3" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5218492, 0.75, 7.0957203)
