@@ -1,3 +1,3 @@
 # Godot Minigame 4
 ## Devlog
-Write your Devlog here.
+Looking at professor Reid’s diagram and mind the biggest difference is how much more specific it is about the actual Godot components. While I was thinking mostly about the 'rules' of the game, professor Reid’s breakdown includes the 'physical' stuff like the ball's 'is on ground' variable. This is an important detail because it’s what actually tells the game if the player is allowed to trigger the 'pick up' action. I also learned that tracking the NPC's distance moved is a smart way to handle AI movement that I hadn't even thought of yet. This breakdown helps me understand that I need to structure the game around specific Node properties rather than just abstract logic.
